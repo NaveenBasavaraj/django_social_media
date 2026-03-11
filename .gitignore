@@ -1,1 +1,44 @@
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build and distribution artifacts
+build/
+dist/
+*.egg-info/
+
+# Django
+*.log
+media/
+staticfiles/
+
+# Local database files (if used)
+db.sqlite3
+db.sqlite3-journal
+
+# Frontend (React app)
+social-media-app/node_modules/
+social-media-app/build/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
