@@ -18,9 +18,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . .
 
-# Make entrypoint executable
-RUN chmod +x entrypoint.sh
+# Normalize shell script line endings and make entrypoint executable
+RUN sed -i 's/\r$//' /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 
 EXPOSE 8000
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "sed -i 's/\r$//' /app/entrypoint.sh && exec /bin/sh /app/entrypoint.sh"]
